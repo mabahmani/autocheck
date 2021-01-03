@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="checkList"
+            type="ir.mab.autocheck.db.entity.CarCheckListEntity" />
+
+        <variable
+            name="formattedDeadLine"
+            type="String" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <View
+                android:id="@+id/overlay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/color2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/guide" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkListTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/checkListAction"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@{checkList.checkTitle}"
+                fontPath="fonts/irmed.ttf"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkListAction"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toLeftOf="@+id/checkListTitle"
+                app:layout_constraintLeft_toRightOf="@+id/checkListDeadLine"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@{checkList.checkAction}"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkListDeadLine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/checkListAction"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@{String.format(@string/deadline_kilometer,formattedDeadLine)}"
+                fontPath="fonts/irmed.ttf"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

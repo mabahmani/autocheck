@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CheckListActivity">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            fontPath="fonts/irmed.ttf"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:ignore="MissingPrefix" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/updateCarLastKilometerParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/carLastKilometerParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/current_kilometer"
+                app:boxStrokeColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="16dp"
+                app:layout_constraintLeft_toRightOf="@+id/updateCarKilometer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/carLastKilometer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textCursorDrawable="@null"
+                    fontPath="fonts/irmed.ttf"
+                    android:textDirection="rtl"
+                    tools:targetApi="jelly_bean_mr1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateCarKilometer"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:text="@string/update"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColorHint="@color/black"
+                fontPath="fonts/irmed.ttf" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/listTitlesParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/updateCarLastKilometerParent"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                fontPath="fonts/irmed.ttf"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="@string/check_dead_line"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                fontPath="fonts/irmed.ttf"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="@string/check_action"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                fontPath="fonts/irmed.ttf"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="@string/check_title"
+                />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/checkListRv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/listTitlesParent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addChecklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="32dp"
+            app:tint="@color/black"
+            android:src="@drawable/ic_baseline_playlist_add_check_24"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/noChecklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_checklist"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

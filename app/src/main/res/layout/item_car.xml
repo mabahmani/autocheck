@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="car"
+            type="ir.mab.autocheck.db.entity.CarEntity" />
+
+        <variable
+            name="formattedKilometer"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintDimensionRatio="4:1"
+            app:cardBackgroundColor="@color/color0"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/carName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:gravity="center"
+                    fontPath="fonts/irmed.ttf"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:text="@{car.name}"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/carKilometer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:padding="16dp"
+                    android:text="@{String.format(@string/kilometer,formattedKilometer)}"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

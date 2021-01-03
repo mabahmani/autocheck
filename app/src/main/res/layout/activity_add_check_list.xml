@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".AddCheckList">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/checkTitleParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/check_list_title"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:boxStrokeColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/checkTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:textDirection="rtl"
+                    tools:targetApi="jelly_bean_mr1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/checkListActionParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/checkTitleParent"
+                android:hint="@string/check_list_action"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                app:boxStrokeColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/checkListAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textCursorDrawable="@null"
+                    android:textDirection="rtl"
+                    tools:targetApi="jelly_bean_mr1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/checkListPeriodParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/checkListActionParent"
+                android:hint="@string/check_period"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                app:boxStrokeColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/checkListPeriod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
+                    android:inputType="numberDecimal"
+                    android:textDirection="rtl"
+                    tools:targetApi="jelly_bean_mr1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/checkListLastCheckParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/checkListPeriodParent"
+                android:hint="@string/last_check"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                app:boxStrokeColor="@color/black"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/checkListLastCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
+                    android:inputType="numberDecimal"
+                    android:textDirection="rtl"
+                    tools:targetApi="jelly_bean_mr1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addChecklist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/add_check_list"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/checkListLastCheckParent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="16sp"
+                android:textColorHint="@color/black"
+                fontPath="fonts/irmed.ttf" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

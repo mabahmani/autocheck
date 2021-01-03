@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AutoCheck</string>
+    <string name="my_cars">ماشین های من</string>
+    <string name="no_cars">لیست ماشین ها خالیست :)</string>
+    <string name="car_name">نام ماشین</string>
+    <string name="car_last_kilometer">کارکرد ماشین</string>
+    <string name="add_car">اضافه کردن ماشین</string>
+    <string name="check_list_title">عنوان چک لیست</string>
+    <string name="check_list_action">عملیات (تعویض، بازدید و ...)</string>
+    <string name="check_period">دوره چک (کیلومتر)</string>
+    <string name="last_check">آخرین چک (کیلومتر)</string>
+    <string name="add_check_list">افزودن چک لیست</string>
+    <string name="kilometer">%s کیلومتر</string>
+    <string name="no_checklist">چک لیست خالیست :)</string>
+    <string name="deadline_kilometer">کیلومتر %s</string>
+    <string name="check_title">عنوان چک</string>
+    <string name="check_action">عملیات چک</string>
+    <string name="check_dead_line">کیلومتر چک</string>
+    <string name="current_kilometer">کارکرد فعلی (کیلومتر)</string>
+    <string name="update">بروزرسانی</string>
+</resources>

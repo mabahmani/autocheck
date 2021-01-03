@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/my_cars"
+            fontPath="fonts/irmed.ttf"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/noCars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_cars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carsList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="32dp"
+            app:tint="@color/black"
+            android:src="@drawable/ic_baseline_directions_car_24"
+            android:contentDescription="add car" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
